@@ -1,3 +1,5 @@
+import profileImg from '../assets/foto_curriculum.jpeg'
+
 function HeroSection() {
   return (
     <section
@@ -22,7 +24,7 @@ function HeroSection() {
           <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-accent-blue via-accent-purple to-accent-pink rounded-full animate-spin-slow" />
             <img
-              src="/profile.jpg"
+              src={profileImg}
               alt="Asier"
               className="absolute inset-[3px] w-[calc(100%-6px)] h-[calc(100%-6px)] rounded-full object-cover bg-dark-900"
             />
