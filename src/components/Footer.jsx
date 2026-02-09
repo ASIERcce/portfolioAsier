@@ -6,6 +6,8 @@ function Footer() {
           Hecho con{' '}
           <span className="text-accent-blue">React</span>
           {' + '}
+          <span className="text-accent-purple">Laravel</span>
+          {' + '}
           <span className="text-accent-cyan">Tailwind CSS</span>
           {' por '}
           <span className="text-white font-medium">Asier</span>

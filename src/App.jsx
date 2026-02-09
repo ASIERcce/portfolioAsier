@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import ToolsSection from './components/ToolsSection'
+import ProjectsSection from './components/ProjectsSection'
 import DemosSection from './components/DemosSection'
 import Footer from './components/Footer'
 
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <ToolsSection />
+      <ProjectsSection />
       <DemosSection />
       <Footer />
     </div>
