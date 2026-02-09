@@ -62,7 +62,7 @@ function AnimatedCards() {
               {/* Front */}
               <div
                 className="absolute inset-0 bg-dark-800 rounded-xl border border-dark-600 flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform duration-200"
-                style={{ backfaceVisibility: 'hidden' }}
+                style={{ backfaceVisibility: 'hidden', transform: 'rotateY(0deg)' }}
               >
                 <span className="text-5xl">{card.icon}</span>
                 <h4 className="text-lg font-semibold">{card.title}</h4>
