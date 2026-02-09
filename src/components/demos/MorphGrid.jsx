@@ -37,7 +37,7 @@ function MorphGrid() {
     mosaic: 'grid-cols-2 md:grid-cols-4',
   }
 
-  const tileClass = (tile, index) => {
+  const tileClass = (_tile, index) => {
     if (layout === 'mosaic') {
       if (index === 0) return 'md:col-span-2 md:row-span-2'
       if (index === 3) return 'md:col-span-2'
@@ -71,7 +71,7 @@ function MorphGrid() {
       </div>
 
       {/* Grid */}
-      <div className={`grid ${gridClass[layout]} gap-4 transition-all duration-500`}>
+      <div className={`grid ${gridClass[layout]} gap-4 transition-all duration-500`} style={layout === 'mosaic' ? { gridAutoFlow: 'dense' } : undefined}>
         {tiles.map((tile, index) => (
           <div
             key={tile.id}
