@@ -2,16 +2,23 @@ import { useState } from 'react'
 import { useInView } from '../../hooks/useInView'
 import { useCounter } from '../../hooks/useCounter'
 
+const colorMap = {
+  'accent-blue': { text: 'text-accent-blue', bg: 'bg-accent-blue' },
+  'accent-purple': { text: 'text-accent-purple', bg: 'bg-accent-purple' },
+  'accent-cyan': { text: 'text-accent-cyan', bg: 'bg-accent-cyan' },
+}
+
 const stats = [
-  { label: 'Proyectos Completados', target: 25, color: 'accent-blue' },
-  { label: 'Tecnologias Dominadas', target: 8, color: 'accent-purple' },
+  { label: 'Proyectos Completados', target: 2, color: 'accent-blue' },
+  { label: 'Tecnologias Dominadas', target: 10, color: 'accent-purple' },
   { label: 'Tazas de Cafe', target: 1420, color: 'accent-cyan' },
 ]
 
-function StatCounter({ label, target, color, shouldStart, onReset }) {
+function StatCounter({ label, target, color, shouldStart }) {
   const count = useCounter(target, 2000, shouldStart)
   const progress = target > 0 ? count / target : 0
   const circumference = 2 * Math.PI * 40
+  const colors = colorMap[color]
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -28,7 +35,7 @@ function StatCounter({ label, target, color, shouldStart, onReset }) {
           <circle
             cx="50" cy="50" r="40"
             fill="none"
-            className={`text-${color}`}
+            className={colors.text}
             stroke="currentColor"
             strokeWidth="6"
             strokeLinecap="round"
@@ -48,7 +55,7 @@ function StatCounter({ label, target, color, shouldStart, onReset }) {
       {/* Progress bar */}
       <div className="w-full h-1.5 bg-dark-600 rounded-full overflow-hidden">
         <div
-          className={`h-full bg-${color} rounded-full transition-all duration-300`}
+          className={`h-full ${colors.bg} rounded-full transition-all duration-300`}
           style={{ width: `${progress * 100}%` }}
         />
       </div>
